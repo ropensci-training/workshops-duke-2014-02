@@ -1,0 +1,19 @@
+## Get downstream names!!
+
+We can also get downstream names, in this case all species from the genus *Apis*, getting data from the Catalogue of Life
+
+```{r coldown}
+col_downstream(name="Apis", downto="Species")
+```
+
+Or get data from ITIS, in this case get genera downstream from _Pinaceae_
+
+```{r itisdown1}
+itis_downstream(tsns=18030, downto="Genus")
+```
+
+Get families downstream from _Acridoidea_
+
+```{r itisdown2}
+itis_downstream(tsns = 650497, "Family")
+```

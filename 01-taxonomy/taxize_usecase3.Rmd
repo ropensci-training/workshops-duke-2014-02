@@ -1,0 +1,27 @@
+## Taxonomic hierarchy
+
+A common task is getting the taxonomic tree upstream from your study taxa. We often know what family or order our taxa are in, but it we often don't know the tribes, subclasses, and superfamilies. taxize provides many avenues to getting classifications. Many are accessible via a single function (*classification*), including the Integrated Taxonomic Information System (ITIS) and National Center for Biotechnology Information (NCBI); and via the Catalogue of Life (see function *col_classification*):
+
+Load `taxize`
+
+```{r class1, cache=TRUE}
+library(taxize)
+```
+
+Define a species list
+
+```{r class2, cache=TRUE}
+splist <- c("Rosa californica","Datura wrightii","Mimulus bicolor","Nicotiana glauca","Madia sativa","Bartlettia scaposa")
+```
+
+Let's get classifications from ITIS using Taxonomic Serial Numbers. Note that we could use uBio instead.
+
+```{r class3, cache=TRUE, message=FALSE, warning=FALSE}
+class_list <- classification(splist, db="itis")
+```
+
+And we can combine these all in two different ways
+
+```{r class4, cache=TRUE}
+ldply(class_list)
+```
