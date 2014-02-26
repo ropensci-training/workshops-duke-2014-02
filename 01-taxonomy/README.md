@@ -23,10 +23,10 @@ You can see more about taxize on the [github repo](http://www.github.com/ropensc
 
 Today we'll cover:
 
-    * How to get a list of [identifiers](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/identifiers.md)
-    * Taxanomic name cleaning and scrubbing and plotting basic phylogenies in [use case 1.](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase1.md)
-    * Converting scientific names to [common names](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase2.md)
-    * Getting upstream taxonomies from a [list of species](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase3.md)
-    * Get [downstream names too](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase5.md)
-    * How to aggregate data at different [taxonomic hierarchies.](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase4.md)
+* How to get a list of [identifiers](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/identifiers.md)
+* Taxanomic name cleaning and scrubbing and plotting basic phylogenies in [use case 1.](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase1.md)
+* Converting scientific names to [common names](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase2.md)
+* Getting upstream taxonomies from a [list of species](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase3.md)
+* Get [downstream names too](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase5.md)
+* How to aggregate data at different [taxonomic hierarchies.](https://github.com/ropensci/workshops-duke-2014-02/blob/master/01-taxonomy/taxize_usecase4.md)
 
