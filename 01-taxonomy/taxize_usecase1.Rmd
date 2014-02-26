@@ -1,6 +1,6 @@
 ## Cleaning taxonomic names
 
-```{r defaults, eval=TRUE, echo=FALSE, cache=TRUE}
+```{r defaults, eval=TRUE, echo=FALSE}
 opts_chunk$set(comment=NA, warning=FALSE, message=FALSE, fig.width=7, fig.height=6)
 ```
 
@@ -12,13 +12,13 @@ library(taxize)
 
 Most of us will start out with a species list, something like the one below. Note that each of the names is spelled incorrectly.
 
-```{r thespecieslist, cache=TRUE}
+```{r thespecieslist}
 splist <- c("Helanthus annuus","Pinos contorta","Collomia grandiflorra", "Abies magnificaa","Rosa california","Datura wrighti","Mimulus bicolour","Nicotiana glauca","Maddia sativa","Bartlettia scapposa")
 ```
 
 There are many ways to resolve taxonomic names in taxize. Of course, the ideal name resolver will do the work behind the scenes for you so that you don't have to do things like fuzzy matching. There are a few services in taxize like this we can choose from: One is the Taxonomic Name Resolution Service from iPlant (see function *tnrs*).
 
-```{r resolvenames, cache=TRUE, message=FALSE, warning=FALSE}
+```{r resolvenames, message=FALSE, warning=FALSE}
 # The tnrs function accepts a vector of 1 or more
 splist_tnrs <- tnrs(query=splist, getpost="POST", source = "iPlant_TNRS")
 
@@ -30,6 +30,15 @@ splist_tnrs <- tnrs(query=splist, getpost="POST", source = "iPlant_TNRS")
 
 # So here's our updated species list
 (splist <- as.character(splist_tnrs$acceptedname))
+```
+
+
+We can also make a tree from our cleaned list of species.  This doesn't work for all taxa, and is based on higher level taxanomic relationships, so polytomy's could be a result.
+
+```{r message = FALSE, warning=FALSE}
+tree <- phylomatic_tree(splist=taxa, storedtree = "R20120829")
+plot(tree)
+
 ```
 
 Another option is the Global Names Resolver service from EOL (see function *gnr_resolve*) and 

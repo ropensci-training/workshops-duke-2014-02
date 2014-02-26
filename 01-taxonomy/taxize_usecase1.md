@@ -29,7 +29,7 @@ There are many ways to resolve taxonomic names in taxize. Of course, the ideal n
 splist_tnrs <- tnrs(query = splist, getpost = "POST", source = "iPlant_TNRS")
 
 # Remove some fields
-(splist_tnrs <- splist_tnrs[, !names(splist_tnrs) %in% c("matchedName", "annotations", 
+(splist_tnrs <- splist_tnrs[, !names(splist_tnrs) %in% c("matchedname", "annotations", 
     "uri")])
 ```
 
@@ -45,17 +45,6 @@ splist_tnrs <- tnrs(query = splist, getpost = "POST", source = "iPlant_TNRS")
 8       Nicotiana glauca     Nicotiana glauca iPlant_TNRS     1
 6          Maddia sativa         Madia sativa iPlant_TNRS  0.97
 2    Bartlettia scapposa   Bartlettia scaposa iPlant_TNRS  0.98
-            matchedname
-3     Helianthus annuus
-1        Pinus contorta
-4  Collomia grandiflora
-5       Abies magnifica
-10     Rosa californica
-9       Datura wrightii
-7       Mimulus bicolor
-8      Nicotiana glauca
-6          Madia sativa
-2    Bartlettia scaposa
 ```
 
 ```r
@@ -77,6 +66,25 @@ splist_tnrs <- tnrs(query = splist, getpost = "POST", source = "iPlant_TNRS")
 ```
 
 
+
+We can also make a tree from our cleaned list of species.  This doesn't work for all taxa, and is based on higher level taxanomic relationships, so polytomy's could be a result.
+
+
+```r
+tree <- phylomatic_tree(splist = taxa, storedtree = "R20120829")
+```
+
+```
+Error: unused argument (splist = taxa)
+```
+
+```r
+plot(tree)
+```
+
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
+
+
 Another option is the Global Names Resolver service from EOL (see function *gnr_resolve*) and 
 
 
@@ -92,13 +100,13 @@ unique(out)
 
 ```
           submitted_name data_source_title score        matched_name2
-1         Pinos contorta               EOL 0.750       Pinus contorta
-8  Collomia grandiflorra               EOL 0.750 Callisia grandiflora
 9       Abies magnificaa               EOL 0.750      Abies magnifica
+16   Bartlettia scapposa               EOL 0.750   Bartlettia scaposa
+8  Collomia grandiflorra               EOL 0.750 Callisia grandiflora
 10        Datura wrighti               EOL 0.750      Datura wrightii
+13         Maddia sativa               EOL 0.750         Madia sativa
 11      Mimulus bicolour               EOL 0.750      Mimulus bicolor
 12      Nicotiana glauca               EOL 0.988     Nicotiana glauca
-13         Maddia sativa               EOL 0.750         Madia sativa
-16   Bartlettia scapposa               EOL 0.750   Bartlettia scaposa
+1         Pinos contorta               EOL 0.750       Pinus contorta
 ```
 

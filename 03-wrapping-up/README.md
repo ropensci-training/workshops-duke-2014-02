@@ -1,5 +1,8 @@
 # Rstudio server
 
+Our workshops are always evolving, and we'd love your feedback.
+[http://ropensci.org/duke-02-2014](http://ropensci.org/duke-02-2014)
+
 The RStudio you used for the workshop today is available as a public Amazon Machine Image (AMI). The machine ID is:
 
 ```coffee
