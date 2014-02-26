@@ -1,6 +1,6 @@
 # Biodiversity suite at rOpenSci
 
-1. GBIF, Bison, iNaturalist, Berkeley Ecoengine, spocc
+1.) GBIF, Bison, iNaturalist, Berkeley Ecoengine, spocc
 
 * [rgbif](http://www.github.com/ropensci/rgbif)
 * [rbison](http://www.github.com/ropensci/rbison)
@@ -8,7 +8,7 @@
 * [ecoengine](http://www.github.com/ropensci/ecoengine)
 * [spocc](http://www.github.com/ropensci/spocc)
 
-2. World Bank Climate data, NOAA climate data
+2.) World Bank Climate data, NOAA climate data
 
 * [rWBclimate](http://www.github.com/ropensci/rwbclimate)
 * [rnoaa](http://www.github.com/ropensci/rnoaa)
