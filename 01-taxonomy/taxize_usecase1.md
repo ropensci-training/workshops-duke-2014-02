@@ -71,14 +71,7 @@ We can also make a tree from our cleaned list of species.  This doesn't work for
 
 
 ```r
-tree <- phylomatic_tree(splist = taxa, storedtree = "R20120829")
-```
-
-```
-Error: unused argument (splist = taxa)
-```
-
-```r
+tree <- phylomatic_tree(taxa = splist, storedtree = "R20120829")
 plot(tree)
 ```
 
@@ -109,4 +102,63 @@ unique(out)
 12      Nicotiana glauca               EOL 0.988     Nicotiana glauca
 1         Pinos contorta               EOL 0.750       Pinus contorta
 ```
+
+
+Finally maybe you're interested in synonyms.  There's function that can grab those for either scientific name or ITIS taxonomic ID.
+
+
+```r
+
+### We can also get synonyms
+
+# via itis serial number
+synonyms(get_tsn("Poa annua"))
+```
+
+```
+[[1]]
+                          name    tsn
+1      Poa annua var. aquatica 538978
+2       Poa annua var. reptans 538979
+3                  Aira pumila 785854
+4             Catabrosa pumila 787993
+5               Ochlopoa annua 791574
+6               Poa aestivalis 793946
+7                   Poa algida 793954
+8         Poa annua var. annua 802116
+9     Poa annua var. eriolepis 802117
+10 Poa annua var. rigidiuscula 802119
+11        Poa annua f. reptans 803667
+```
+
+```r
+
+# Or scientific name
+synonyms(c("Poa annua", "Pinus contorta", "Puma concolor"), db = "itis")
+```
+
+```
+$`Poa annua`
+                          name    tsn
+1      Poa annua var. aquatica 538978
+2       Poa annua var. reptans 538979
+3                  Aira pumila 785854
+4             Catabrosa pumila 787993
+5               Ochlopoa annua 791574
+6               Poa aestivalis 793946
+7                   Poa algida 793954
+8         Poa annua var. annua 802116
+9     Poa annua var. eriolepis 802117
+10 Poa annua var. rigidiuscula 802119
+11        Poa annua f. reptans 803667
+
+$`Pinus contorta`
+     name    tsn
+1 nomatch 183327
+
+$`Puma concolor`
+            name    tsn
+1 Felis concolor 180587
+```
+
 

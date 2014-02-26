@@ -36,7 +36,7 @@ splist_tnrs <- tnrs(query=splist, getpost="POST", source = "iPlant_TNRS")
 We can also make a tree from our cleaned list of species.  This doesn't work for all taxa, and is based on higher level taxanomic relationships, so polytomy's could be a result.
 
 ```{r message = FALSE, warning=FALSE}
-tree <- phylomatic_tree(splist=taxa, storedtree = "R20120829")
+tree <- phylomatic_tree(taxa=splist, storedtree = "R20120829")
 plot(tree)
 
 ```
@@ -51,3 +51,18 @@ eol <- sources$id[sources$title == 'EOL']
 out <- gnr_resolve(splist, data_source_ids=eol, stripauthority=TRUE)
 unique(out)
 ```
+
+Finally maybe you're interested in synonyms.  There's function that can grab those for either scientific name or ITIS taxonomic ID.
+
+```{r syns}
+
+### We can also get synonyms
+
+# via itis serial number
+synonyms(get_tsn("Poa annua"))
+
+# Or scientific name
+synonyms(c("Poa annua",'Pinus contorta','Puma concolor'), db="itis")
+
+```
+
